@@ -45,4 +45,4 @@ def addName():
     return render_template("index.html", names=names)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=2503, host="172.22.145.124")
+    app.run(port=2503)
