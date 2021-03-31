@@ -16,7 +16,7 @@ class Names(Resource):
     def post(self, id, name, age, phone, email):
             if names.get(id) == None:
                 names.update({id:{"id":id, "name":name, "age":age, "phone":phone, "email":email}})
-                return msg1
+                return names.get(id)
             else:
                 return err2
 
@@ -34,7 +34,7 @@ api.add_resource(Id, "/id/<int:id>")
 @app.route("/", methods=["GET", "POST"])
 def addName():
     if request.method == "POST":
-        url = "http://172.22.145.124:2503/names/id={}&name={}&age={}&phone={}&email={}"
+        url = "https://my-names-api.herokuapp.com/names/id={}&name={}&age={}&phone={}&email={}"
         id = request.form['id']
         name = request.form['name']
         age = request.form['age']
