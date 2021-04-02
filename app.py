@@ -80,7 +80,7 @@ def addName():
     allNames = NameModel.query.all()
     
     if request.method == "POST":
-        url = "http://my-names-api.herokuapp.com/names/id={}&name={}&age={}&phone={}&email={}"
+        url = "https://my-names-api.herokuapp.com/names/id={}&name={}&age={}&phone={}&email={}"
         id = request.form['id']
         name = request.form['name']
         age = request.form['age']
